@@ -3,11 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comparateur — Le Grand Livre des Prompts</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Comparateur — Prompt Finance</title>
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Fix pour empêcher le logo SVG de devenir géant */
+  .brand svg { width: 26px; height: 26px; margin-right: 10px; stroke: var(--primary); flex-shrink: 0; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  
+  /* Design pour les onglets du comparateur */
+  .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap; }
+  .tab { padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-weight: 600; color: var(--text-muted); border-bottom: 2px solid transparent; transition: all 0.2s; font-size: 0.95rem; }
+  .tab:hover { color: var(--primary); }
+  .tab.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+  .tab-panel { display: none; animation: fadeIn 0.3s ease-in-out; }
+  .tab-panel.active { display: block; }
+  .verdict { margin-top: 1rem; padding: 1rem; background: #F8FAFC; border-left: 4px solid var(--accent); border-radius: 4px; font-size: 0.95rem; color: var(--text-main); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  .badge-basique { background: #FEF2F2; color: #991B1B; }
+  .badge-moyen { background: #FFFBEB; color: #92400E; }
+  .badge-expert { background: #ECFDF5; color: #065F46; }
+</style>
 </head>
 <body>
 
@@ -15,14 +30,13 @@
   <div class="nav-inner">
     <a href="index.html" class="brand">
       <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="24" height="24" fill="none" stroke="#2E5C4E" stroke-width="1.4"/>
-        <line x1="1" y1="9" x2="25" y2="9" stroke="#2E5C4E" stroke-width="1.2"/>
-        <line x1="1" y1="17" x2="25" y2="17" stroke="#2E5C4E" stroke-width="1.2"/>
-        <line x1="9" y1="1" x2="9" y2="25" stroke="#2E5C4E" stroke-width="1.2"/>
+        <rect x="1" y="1" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="1" y1="9" x2="25" y2="9" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="1" y1="17" x2="25" y2="17" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="9" y1="1" x2="9" y2="25" stroke="currentColor" stroke-width="1.2"/>
       </svg>
-      <span class="brand-text">Le Grand Livre<span>Prompt engineering pour la comptabilité</span></span>
+      Le Grand Livre des Prompts
     </a>
-    <button id="navToggle" aria-label="Ouvrir le menu">☰</button>
     <nav class="links" id="navLinks">
       <a href="fondamentaux.html">Fondamentaux</a>
       <a href="comparateur.html" class="active">Cas Généraux</a>
@@ -30,89 +44,172 @@
       <a href="techniques.html">Techniques</a>
       <a href="bonus-cdg.html">Bonus CDG</a>
       <a href="ressources.html">Ressources</a>
-      <a href="about.html">À propos</a>
     </nav>
   </div>
 </header>
 
 <section id="hero">
-  <div class="wrap">
-    <div class="kicker"><span class="num">2</span> Comparateur interactif</div>
-    <h1>La différence par l'exemple</h1>
-    <p class="lede">Naviguez entre les niveaux pour comprendre comment la précision d'un prompt transforme la qualité du livrable comptable.</p>
-  </div>
+  <h1>Le Comparateur Interactif</h1>
+  <p class="lede">Le quotidien d'un Chef de Service Comptable : découvrez comment la précision d'un prompt transforme instantanément la qualité de vos livrables.</p>
 </section>
 
-<section>
-  <div class="wrap">
-    <h2>Cas 1 : Rédaction d'une relance client diplomate mais ferme</h2>
+<main class="container">
+
+  <!-- CAS 1 : CORRECTION D'UNE NOTE (ERREUR) -->
+  <div class="card" style="margin-bottom: 3rem;">
+    <h2>Cas 1 : Réécrire une note suite à une erreur comptable</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Un assistant a fait un brouillon confus pour expliquer une erreur de déclaration de TVA au DAF. Vous devez utiliser l'IA pour rendre cela pro, clair et rassurant.</p>
     
     <div class="comparator" id="cas1">
       <div class="tabs" role="tablist">
-        <button class="tab active" data-target="cas1-bas"><span class="dot"></span>Basique</button>
-        <button class="tab" data-target="cas1-moyen"><span class="dot"></span>Moyen</button>
-        <button class="tab" data-target="cas1-eleve"><span class="dot"></span>Expert</button>
+        <button class="tab active" data-target="cas1-bas">Niveau 1 : Basique</button>
+        <button class="tab" data-target="cas1-eleve">Niveau 2 : Expert</button>
       </div>
 
-      <!-- Basique -->
       <div class="tab-panel active" id="cas1-bas">
-        <div class="label-row">Prompt envoyé</div>
-        <div class="prompt-header"><span>PROMPT</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
-        <div class="prompt-box">Écris un mail pour relancer un client qui n'a pas payé.</div>
-        <div class="label-row" style="margin-top:15px;">Réponse de l'IA (Esquisse)</div>
-        <div class="response-box quality-bas">
-          "Cher client, sauf erreur de notre part, nous n'avons pas reçu le paiement. Merci de régler au plus vite..."
+        <div class="prompt-container">
+          <div class="prompt-header">Le Prompt envoyé</div>
+          <div class="prompt-body">Corrige ce texte : "On s'est trompé dans la TVA de 2000 euros à cause d'un bug du logiciel, on va arranger ça le mois prochain."</div>
         </div>
-        <p class="verdict">→ <strong>Critique :</strong> Trop froid, générique. Ne mentionne pas de factures ni de montants.</p>
+        <div class="prompt-container" style="border-color: #FCA5A5;">
+          <div class="prompt-header badge-basique">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Nous avons commis une erreur dans la déclaration de TVA d'un montant de 2000 euros en raison d'un dysfonctionnement logiciel. Nous rectifierons cela le mois prochain."</div>
+        </div>
+        <div class="verdict"><strong>Critique :</strong> L'IA a juste corrigé la grammaire. Le ton reste trop familier et inadapté pour une communication à la Direction Financière.</div>
       </div>
 
-      <!-- Expert -->
       <div class="tab-panel" id="cas1-eleve">
-        <div class="label-row">Prompt envoyé</div>
-        <div class="prompt-header"><span>PROMPT</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
-        <div class="prompt-box">Agis comme un chargé de recouvrement B2B. 
-Contexte : Le client "Alpha Corp" (un très bon client historique) a 2 factures en retard : F-2026-101 (15 000€, due le 15/08) et F-2026-145 (4 500€, due le 30/08).
-Tâche : Rédige un email de relance de niveau 2 (rappel amical mais ferme).
-Format : Email professionnel avec objet accrocheur.
-Contrainte : Propose d'inclure notre RIB en pièce jointe, et demande s'il y a un litige bloquant le paiement. Sois diplomate.</div>
-        <div class="label-row" style="margin-top:15px;">Réponse de l'IA (Esquisse)</div>
-        <div class="response-box quality-eleve">
-          "Objet : Point sur votre compte Alpha Corp - Factures échues (19 500€)
-          Bonjour [Nom],
-          Partenaires de longue date, nous nous permettons de revenir vers vous concernant les factures F-2026-101 et F-2026-145, arrivées à échéance... 
-          Y a-t-il un élément bloquant de votre côté pour leur mise en paiement ?"
+        <div class="prompt-container">
+          <div class="prompt-header"><span>LE PROMPT EXPERT (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+          <div class="prompt-body">Agis comme le Chef Comptable. 
+Tâche : Réécris ce brouillon pour le DAF concernant une erreur de TVA. 
+Brouillon : "On s'est trompé dans la TVA de 2000 euros à cause d'un bug du logiciel, on va arranger ça le mois prochain."
+Contraintes : 
+- Ton formel, rassurant et orienté solution. 
+- Utilise une structure en 3 points : 1. Constat (Anomalie de 2000€), 2. Origine (Paramétrage ERP), 3. Plan d'action (Régularisation M+1). 
+- Le rendu doit être court et direct.</div>
         </div>
-        <p class="verdict">→ <strong>Critique :</strong> Parfait. Prêt à être envoyé, ton adapté, montants intégrés et approche orientée solution.</p>
+        <div class="prompt-container" style="border-color: #6EE7B7;">
+          <div class="prompt-header badge-expert">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Bonjour,
+Je vous informe d'une anomalie détectée sur notre dernière déclaration.
+• Constat : Écart de TVA à décaisser évalué à 2 000 €.
+• Origine : Incident isolé lié au paramétrage du module fiscal de notre ERP.
+• Plan d'action : Le correctif informatique a été déployé. La régularisation de la somme sera intégrée sur la déclaration du mois prochain (M+1), sans pénalité."</div>
+        </div>
+        <div class="verdict"><strong>Critique :</strong> Parfait. C'est structuré, le vocabulaire est professionnel ("Anomalie", "Décaisser", "Correctif") et le DAF est immédiatement rassuré.</div>
       </div>
     </div>
-
   </div>
-</section>
 
-<footer>
-  <div class="wrap" style="max-width:none;">
-    <p>Le Grand Livre des Prompts</p>
+  <!-- CAS 2 : APUREMENT COMPTE 471 -->
+  <div class="card" style="margin-bottom: 3rem;">
+    <h2>Cas 2 : Secouer les équipes opérationnelles (Compte 471)</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">C'est la période de clôture et le compte d'attente 471 est plein d'encaissements non identifiés. Vous devez écrire aux commerciaux.</p>
+    
+    <div class="comparator" id="cas2">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-target="cas2-bas">Niveau 1 : Basique</button>
+        <button class="tab" data-target="cas2-eleve">Niveau 2 : Expert</button>
+      </div>
+
+      <div class="tab-panel active" id="cas2-bas">
+        <div class="prompt-container">
+          <div class="prompt-header">Le Prompt envoyé</div>
+          <div class="prompt-body">Rédige un mail pour demander aux commerciaux de justifier les encaissements de 50 000€ sur notre compte d'attente.</div>
+        </div>
+        <div class="prompt-container" style="border-color: #FCA5A5;">
+          <div class="prompt-header badge-basique">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Chers commerciaux, nous avons 50 000€ sur le compte d'attente. Pouvez-vous nous dire à quels clients cela correspond pour que nous puissions faire notre comptabilité ?"</div>
+        </div>
+        <div class="verdict"><strong>Critique :</strong> Manque d'autorité. L'urgence de la clôture n'est pas perçue, et il n'y a pas de date limite (deadline) exigée.</div>
+      </div>
+
+      <div class="tab-panel" id="cas2-eleve">
+        <div class="prompt-container">
+          <div class="prompt-header"><span>LE PROMPT EXPERT (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+          <div class="prompt-body">Agis comme le Chef Comptable. 
+Tâche : Rédige un mémo strict à l'équipe commerciale. 
+Contexte : Nous avons 50 000€ de virements reçus mais non identifiés (sans numéro de facture) sur le compte 471. Cela bloque la clôture mensuelle. 
+Demande : Identifier ces paiements d'urgence. 
+Format : Email avec des bullet points. 
+Contrainte : Ton d'urgence mais courtois. Impose un délai strict à demain midi, en précisant que sans retour de leur part, les comptes clients concernés seront considérés comme impayés.</div>
+        </div>
+        <div class="prompt-container" style="border-color: #6EE7B7;">
+          <div class="prompt-header badge-expert">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Objet : ⚠️ URGENT - Clôture mensuelle : Identification de 50 000€ d'encaissements
+Bonjour à l'équipe commerciale,
+Dans le cadre de la clôture en cours, nous avons 50 000€ de virements reçus sans référence de facture. Ce point bloque actuellement nos travaux de clôture.
+Ce que nous attendons de vous d'ici demain à 12h00 :
+• Consulter la liste des encaissements orphelins jointe.
+• Nous indiquer le client et la facture associés pour chaque ligne.
+Important : Passé ce délai, ces montants ne pourront être lettrés et les factures de vos clients ressortiront en statut 'Impayé' lors des prochaines relances."</div>
+        </div>
+        <div class="verdict"><strong>Critique :</strong> Excellent. Le ton montre l'urgence sans être agressif, l'impact métier (relance client erronée) est expliqué pour responsabiliser les commerciaux.</div>
+      </div>
+    </div>
   </div>
-</footer>
+
+  <!-- CAS 3 : SYNTHESE DE CLOTURE -->
+  <div class="card">
+    <h2>Cas 3 : Le Flash Report de clôture pour la Direction</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Vous venez de sortir la balance. Vous devez faire un e-mail ultra-synthétique des faits marquants pour la direction générale.</p>
+    
+    <div class="comparator" id="cas3">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-target="cas3-bas">Niveau 1 : Basique</button>
+        <button class="tab" data-target="cas3-eleve">Niveau 2 : Expert</button>
+      </div>
+
+      <div class="tab-panel active" id="cas3-bas">
+        <div class="prompt-container">
+          <div class="prompt-header">Le Prompt envoyé</div>
+          <div class="prompt-body">Voici les chiffres du mois : Chiffre d'affaires 500k€, Charges 300k€. Fais une synthèse de la clôture.</div>
+        </div>
+        <div class="prompt-container" style="border-color: #FCA5A5;">
+          <div class="prompt-header badge-basique">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"La clôture du mois montre une performance positive. Le chiffre d'affaires s'élève à 500 000 euros, ce qui montre une bonne dynamique. En parallèle, l'entreprise a supporté 300 000 euros de charges opérationnelles. Le solde est donc positif de 200 000 euros..."</div>
+        </div>
+        <div class="verdict"><strong>Critique :</strong> L'IA fait du remplissage ("blabla"). Un DAF n'a pas le temps de lire de longues phrases sans valeur ajoutée.</div>
+      </div>
+
+      <div class="tab-panel" id="cas3-eleve">
+        <div class="prompt-container">
+          <div class="prompt-header"><span>LE PROMPT EXPERT (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+          <div class="prompt-body">Agis comme le Chef de Service Comptable. 
+Tâche : Prépare le 'Flash Report' de la clôture de Septembre pour le DAF. 
+Données : 
+- CA = 500k€ (soit +10% vs Budget) 
+- OPEX = 300k€ (+15% vs Budget, expliqué par le versement des primes annuelles). 
+- BFR dégradé suite aux retards de paiement du client Alpha.
+Format : E-mail avec 3 puces maximum. 
+Contrainte : Style "Executive Summary". Mise en gras exclusive des chiffres clés. Pas de blabla introductif ou de conclusion générique. Sois direct.</div>
+        </div>
+        <div class="prompt-container" style="border-color: #6EE7B7;">
+          <div class="prompt-header badge-expert">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Objet : Flash Report - Clôture Septembre
+• Revenus : CA de <strong>500 k€</strong>, surperformant le budget de <strong>+10%</strong>.
+• Charges (OPEX) : <strong>300 k€</strong> (<strong>+15%</strong> vs Budget), écart ponctuel justifié par l'impact du versement des primes annuelles.
+• Trésorerie / BFR : Tensions à court terme identifiées suite aux retards d'encaissement du compte client Alpha."</div>
+        </div>
+        <div class="verdict"><strong>Critique :</strong> Parfait. C'est exactement le type d'e-mail synthétique, chiffré et justifié qu'un DAF s'attend à recevoir d'un Chef Comptable.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
 
 <script>
-  // Gestion du menu
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  navToggle?.addEventListener('click', () => navLinks.classList.toggle('open'));
-
-  // Gestion des onglets
+  // Gestion indépendante des onglets pour chaque comparateur
   document.querySelectorAll('.comparator').forEach(comparator => {
     const tabs = comparator.querySelectorAll('.tab');
     const panels = comparator.querySelectorAll('.tab-panel');
     
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        // Enlever la classe active partout dans ce comparateur
         tabs.forEach(t => t.classList.remove('active'));
         panels.forEach(p => p.classList.remove('active'));
         
-        // Ajouter la classe active sur l'onglet cliqué et son panel
         tab.classList.add('active');
         const target = tab.getAttribute('data-target');
         comparator.querySelector('#' + target).classList.add('active');
@@ -120,17 +217,12 @@ Contrainte : Propose d'inclure notre RIB en pièce jointe, et demande s'il y a u
     });
   });
 
-  // Fonction copie
   function copyPrompt(button) {
     const promptBox = button.parentElement.nextElementSibling;
     navigator.clipboard.writeText(promptBox.innerText).then(() => {
         const originalText = button.innerText;
         button.innerText = "Copié !";
-        button.classList.add("copied");
-        setTimeout(() => {
-            button.innerText = originalText;
-            button.classList.remove("copied");
-        }, 2000);
+        setTimeout(() => button.innerText = originalText, 2000);
     });
   }
 </script>

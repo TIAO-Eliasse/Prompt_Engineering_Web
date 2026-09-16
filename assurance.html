@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comptabilité d'Assurance — Prompt Finance</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* Fix pour le logo SVG */
+  .brand svg { width: 26px; height: 26px; margin-right: 10px; stroke: var(--primary); flex-shrink: 0; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  
+  /* Nouveau design pour les onglets */
+  .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap; }
+  .tab { padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-weight: 600; color: var(--text-muted); border-bottom: 2px solid transparent; transition: all 0.2s; font-size: 0.95rem; }
+  .tab:hover { color: var(--primary); }
+  .tab.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+  .tab-panel { display: none; animation: fadeIn 0.3s ease-in-out; }
+  .tab-panel.active { display: block; }
+  .verdict { margin-top: 1rem; padding: 1rem; background: #F8FAFC; border-left: 4px solid var(--accent); border-radius: 4px; font-size: 0.95rem; color: var(--text-main); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="1" y1="9" x2="25" y2="9" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="1" y1="17" x2="25" y2="17" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="9" y1="1" x2="9" y2="25" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      Le Grand Livre des Prompts
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="fondamentaux.html">Fondamentaux</a>
+      <a href="comparateur.html">Cas Généraux</a>
+      <a href="assurance.html" class="active">Spécial Assurance</a>
+      <a href="techniques.html">Techniques</a>
+      <a href="bonus-cdg.html">Bonus CDG</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <h1>Spécialité : Comptabilité des Assurances</h1>
+  <p class="lede">Le secteur de l'assurance exige une rigueur technique particulière (Provisions, Réassurance). Voici comment formuler vos requêtes pour des normes pointues.</p>
+</section>
+
+<main class="container">
+
+  <!-- CAS 1 : Provisions Techniques -->
+  <div class="card" style="margin-bottom: 3rem;">
+    <h2>Cas 1 : Justification des PPNA</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Objectif : Obtenir de l'aide pour documenter ou valider le calcul des Provisions pour Primes Non Acquises en fin d'exercice.</p>
+    
+    <div class="comparator" id="cas-ppna">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-target="ppna-bas">Basique</button>
+        <button class="tab" data-target="ppna-avance">Avancé (Expert Comptable)</button>
+      </div>
+
+      <div class="tab-panel active" id="ppna-bas">
+        <div class="prompt-container">
+          <div class="prompt-header">Le Prompt envoyé</div>
+          <div class="prompt-body">Comment on calcule les primes non acquises ?</div>
+        </div>
+        <div class="verdict"><strong>Analyse :</strong> L'IA va vous donner une définition Wikipédia. Trop théorique, cela n'aide pas le comptable dans ses travaux de clôture de fin d'année.</div>
+      </div>
+
+      <div class="tab-panel" id="ppna-avance">
+        <div class="prompt-container">
+          <div class="prompt-header"><span>LE PROMPT EXPERT (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+          <div class="prompt-body">Agis en tant qu'expert-comptable spécialisé en assurance. Je prépare le dossier de clôture annuelle pour les auditeurs. 
+Tâche : Rédige une note de synthèse documentant la méthodologie de calcul des Provisions pour Primes Non Acquises (PPNA) pour notre branche IARD.
+Contraintes :
+- Explique la méthode du prorata temporis (au jour le jour).
+- Précise le traitement comptable selon le plan comptable des assurances.
+- Mentionne les points d'attention habituels des commissaires aux comptes (ex: contrats à tacite reconduction).
+Format : Note structurée avec le schéma comptable Débit/Crédit.</div>
+        </div>
+        <div class="verdict"><strong>Analyse :</strong> Le rôle, le contexte d'audit, et les contraintes réglementaires génèrent un document livrable directement intégrable au dossier de révision.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAS 2 : Rapprochement Réassurance -->
+  <div class="card">
+    <h2>Cas 2 : Écarts de Réassurance</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Objectif : Auditer les comptes de primes cédées en Traité non proportionnel.</p>
+    
+    <div class="prompt-container">
+      <div class="prompt-header"><span>LE PROMPT DE RÉSOLUTION (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+      <div class="prompt-body">Contexte : Je suis responsable comptabilité technique dans une compagnie d'assurance. Lors de la clôture, j'ai un écart sur le compte "Primes cédées aux réassureurs" en Traité non proportionnel (Excess of Loss).
+Tâche : Agis comme un réviseur comptable senior. Liste-moi les 5 causes les plus fréquentes qui expliquent un écart entre le bordereau technique du courtier et notre balance générale.
+Format : Un tableau Markdown avec 3 colonnes : Cause de l'écart | Méthode de vérification | Écriture de régularisation type.</div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  document.querySelectorAll('.comparator').forEach(comparator => {
+    const tabs = comparator.querySelectorAll('.tab');
+    const panels = comparator.querySelectorAll('.tab-panel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.getAttribute('data-target');
+        comparator.querySelector('#' + target).classList.add('active');
+      });
+    });
+  });
+
+  function copyPrompt(button) {
+    const promptBox = button.parentElement.nextElementSibling;
+    navigator.clipboard.writeText(promptBox.innerText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = "Copié !";
+        setTimeout(() => button.innerText = originalText, 2000);
+    });
+  }
+</script>
+</body>
+</html>
