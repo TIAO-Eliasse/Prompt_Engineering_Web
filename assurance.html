@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comptabilité d'Assurance — Prompt Finance</title>
+<title>Comptabilité d'Assurance (Livre IV) — Prompt Finance</title>
 <link rel="stylesheet" href="assets/style.css">
 <style>
-  /* Fix pour le logo SVG */
   .brand svg { width: 26px; height: 26px; margin-right: 10px; stroke: var(--primary); flex-shrink: 0; }
   .brand { display: flex; align-items: center; text-decoration: none; }
   
-  /* Nouveau design pour les onglets */
   .tabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap; }
   .tab { padding: 0.75rem 1rem; background: none; border: none; cursor: pointer; font-weight: 600; color: var(--text-muted); border-bottom: 2px solid transparent; transition: all 0.2s; font-size: 0.95rem; }
   .tab:hover { color: var(--primary); }
@@ -19,6 +17,8 @@
   .tab-panel.active { display: block; }
   .verdict { margin-top: 1rem; padding: 1rem; background: #F8FAFC; border-left: 4px solid var(--accent); border-radius: 4px; font-size: 0.95rem; color: var(--text-main); }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+  .badge-basique { background: #FEF2F2; color: #991B1B; }
+  .badge-expert { background: #ECFDF5; color: #065F46; }
 </style>
 </head>
 <body>
@@ -34,7 +34,7 @@
       </svg>
       Le Grand Livre des Prompts
     </a>
-    <nav class="links" id="navLinks">
+    <nav class="links">
       <a href="fondamentaux.html">Fondamentaux</a>
       <a href="comparateur.html">Cas Généraux</a>
       <a href="assurance.html" class="active">Spécial Assurance</a>
@@ -46,57 +46,94 @@
 </header>
 
 <section id="hero">
-  <h1>Spécialité : Comptabilité des Assurances</h1>
-  <p class="lede">Le secteur de l'assurance exige une rigueur technique particulière (Provisions, Réassurance). Voici comment formuler vos requêtes pour des normes pointues.</p>
+  <div class="container">
+    <h1>Spécialité : Le Livre IV</h1>
+    <p class="lede">Comment contraindre l'IA à respecter le plan comptable et les règles réglementaires spécifiques aux organismes d'assurance.</p>
+  </div>
 </section>
 
 <main class="container">
 
-  <!-- CAS 1 : Provisions Techniques -->
+  <!-- CAS 1 : COUVERTURE DES ENGAGEMENTS REGLEMENTES -->
   <div class="card" style="margin-bottom: 3rem;">
-    <h2>Cas 1 : Justification des PPNA</h2>
-    <p style="color: var(--text-muted); margin-bottom: 2rem;">Objectif : Obtenir de l'aide pour documenter ou valider le calcul des Provisions pour Primes Non Acquises en fin d'exercice.</p>
+    <h2>Cas 1 : Admissibilité des actifs (Engagements réglementés)</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Le DAF veut savoir si l'acquisition d'un nouvel immeuble de rapport respecte les règles de dispersion pour couvrir les provisions techniques.</p>
     
-    <div class="comparator" id="cas-ppna">
+    <div class="comparator" id="cas-actifs">
       <div class="tabs" role="tablist">
-        <button class="tab active" data-target="ppna-bas">Basique</button>
-        <button class="tab" data-target="ppna-avance">Avancé (Expert Comptable)</button>
+        <button class="tab active" data-target="actifs-bas">Niveau 1 : Basique</button>
+        <button class="tab" data-target="actifs-avance">Niveau 2 : Expert (Livre IV)</button>
       </div>
 
-      <div class="tab-panel active" id="ppna-bas">
+      <div class="tab-panel active" id="actifs-bas">
         <div class="prompt-container">
           <div class="prompt-header">Le Prompt envoyé</div>
-          <div class="prompt-body">Comment on calcule les primes non acquises ?</div>
+          <div class="prompt-body">Est-ce qu'on peut utiliser un immeuble pour couvrir nos provisions d'assurance ?</div>
         </div>
-        <div class="verdict"><strong>Analyse :</strong> L'IA va vous donner une définition Wikipédia. Trop théorique, cela n'aide pas le comptable dans ses travaux de clôture de fin d'année.</div>
+        <div class="prompt-container" style="border-color: #FCA5A5;">
+          <div class="prompt-header badge-basique">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Oui, les compagnies d'assurance peuvent investir dans l'immobilier pour couvrir leurs engagements. Cela fait partie des actifs admissibles en général..."</div>
+        </div>
+        <div class="verdict"><strong>Analyse :</strong> L'IA répond avec une généralité mondiale. Elle ignore les limites de dispersion strictes (souvent 15% ou 40%) fixées par la réglementation locale. Inutilisable pour un audit.</div>
       </div>
 
-      <div class="tab-panel" id="ppna-avance">
+      <div class="tab-panel" id="actifs-avance">
         <div class="prompt-container">
           <div class="prompt-header"><span>LE PROMPT EXPERT (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
-          <div class="prompt-body">Agis en tant qu'expert-comptable spécialisé en assurance. Je prépare le dossier de clôture annuelle pour les auditeurs. 
-Tâche : Rédige une note de synthèse documentant la méthodologie de calcul des Provisions pour Primes Non Acquises (PPNA) pour notre branche IARD.
+          <div class="prompt-body">Agis en tant que Directeur Comptable spécialisé dans le Livre IV (Règles comptables des organismes d'assurance). 
+Contexte : Nous préparons l'état réglementaire de couverture des engagements. Nous envisageons d'affecter un immeuble de rapport (Valeur Nette Comptable : 500 Millions) à la couverture de nos provisions techniques. 
+Tâche : Rédige une note de conformité pour le régulateur.
 Contraintes :
-- Explique la méthode du prorata temporis (au jour le jour).
-- Précise le traitement comptable selon le plan comptable des assurances.
-- Mentionne les points d'attention habituels des commissaires aux comptes (ex: contrats à tacite reconduction).
-Format : Note structurée avec le schéma comptable Débit/Crédit.</div>
+- Base ton analyse STRICTEMENT sur les règles d'admissibilité et de dispersion des actifs du Livre IV.
+- Précise le pourcentage limite applicable à la catégorie "Immobilier".
+- Format : Note formelle avec "Hypothèses", "Règle applicable (Livre IV)" et "Conclusion".</div>
         </div>
-        <div class="verdict"><strong>Analyse :</strong> Le rôle, le contexte d'audit, et les contraintes réglementaires génèrent un document livrable directement intégrable au dossier de révision.</div>
+        <div class="prompt-container" style="border-color: #6EE7B7;">
+          <div class="prompt-header badge-expert">Réponse de l'IA (Esquisse)</div>
+          <div class="prompt-body">"Note de Conformité - Couverture des Engagements Réglementés
+[...]
+Règle applicable (Livre IV) : Conformément aux dispositions régissant l'admissibilité des actifs, les placements immobiliers sont admis en représentation des provisions techniques, sous réserve que la valeur de cet immeuble n'excède pas le ratio de dispersion autorisé pour un même actif immobilier (ex: limite de la base de dispersion).
+Conclusion : L'immeuble de 500M est admissible SI ET SEULEMENT SI cette valeur représente moins de X% du total des engagements réglementés de la compagnie..."</div>
+        </div>
+        <div class="verdict"><strong>Analyse :</strong> La requête force l'IA à utiliser le cadre juridique ("admissibilité", "dispersion"). Le document généré anticipe exactement les questions de la commission de contrôle.</div>
       </div>
     </div>
   </div>
 
-  <!-- CAS 2 : Rapprochement Réassurance -->
-  <div class="card">
-    <h2>Cas 2 : Écarts de Réassurance</h2>
-    <p style="color: var(--text-muted); margin-bottom: 2rem;">Objectif : Auditer les comptes de primes cédées en Traité non proportionnel.</p>
+  <!-- CAS 2 : SCHEMAS COMPTABLES PSAP -->
+  <div class="card" style="margin-bottom: 3rem;">
+    <h2>Cas 2 : Schéma d'écriture (PSAP et Recours)</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Un comptable junior a un doute sur la comptabilisation d'un gros sinistre avec un recours attendu. Vous utilisez l'IA pour générer le schéma d'écriture exact.</p>
     
     <div class="prompt-container">
-      <div class="prompt-header"><span>LE PROMPT DE RÉSOLUTION (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
-      <div class="prompt-body">Contexte : Je suis responsable comptabilité technique dans une compagnie d'assurance. Lors de la clôture, j'ai un écart sur le compte "Primes cédées aux réassureurs" en Traité non proportionnel (Excess of Loss).
-Tâche : Agis comme un réviseur comptable senior. Liste-moi les 5 causes les plus fréquentes qui expliquent un écart entre le bordereau technique du courtier et notre balance générale.
-Format : Un tableau Markdown avec 3 colonnes : Cause de l'écart | Méthode de vérification | Écriture de régularisation type.</div>
+      <div class="prompt-header"><span>LE PROMPT DE SCHÉMA COMPTABLE (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+      <div class="prompt-body">Agis comme l'Expert Référent du plan comptable des assurances (Livre IV).
+Tâche : Détaille le schéma comptable complet de fin d'exercice pour les Provisions pour Sinistres à Payer (PSAP) avec la gestion des recours à encaisser.
+Données :
+- Montant évalué du sinistre restant à payer au 31/12 : 15 000 000.
+- Estimation du recours à encaisser (récupération subrogation) : 5 000 000.
+Contraintes :
+- Utilise la nomenclature exacte des numéros de comptes (Classe 3 pour les provisions techniques, Classe 6 pour les charges de sinistres, etc.) conformément au Livre IV.
+- Présente la réponse sous forme de tableau (Compte | Libellé | Débit | Crédit).
+- Sépare clairement l'écriture de la provision brute et l'écriture de l'évaluation du recours.</div>
+    </div>
+  </div>
+
+  <!-- CAS 3 : ANALYSE DES COMPTES D'INTERMÉDIAIRES (COURTIERS) -->
+  <div class="card">
+    <h2>Cas 3 : Analyse des soldes courtiers (Classe 4)</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">La justification des comptes de courtiers et apporteurs d'affaires est le point noir de la comptabilité d'assurance. L'IA peut auditer un fichier d'antériorité des soldes.</p>
+    
+    <div class="prompt-container">
+      <div class="prompt-header"><span>LE PROMPT D'ANALYSE DE BALANCE (À COPIER)</span><button class="copy-btn" onclick="copyPrompt(this)">Copier</button></div>
+      <div class="prompt-body">Agis comme Réviseur Comptable (Spécialiste Livre IV).
+Contexte : Je dois analyser la balance âgée de nos comptes de tiers intermédiaires (Courtiers - Comptes 40/41 spécifiques assurance) pour la clôture trimestrielle.
+Tâche : 
+1. Analyse le tableau des soldes ci-dessous.
+2. Isole les soldes débiteurs de plus de 90 jours (qui nécessitent potentiellement un provisionnement pour dépréciation selon les règles comptables).
+3. Rédige un e-mail au département production/recouvrement exigeant la justification de ces soldes spécifiques.
+Format : E-mail direct, contenant un tableau Markdown des courtiers à risque.
+Données à analyser : [COLLER ICI LE TABLEAU EXCEL DE LA BALANCE ÂGÉE DES COURTIERS]</div>
     </div>
   </div>
 
