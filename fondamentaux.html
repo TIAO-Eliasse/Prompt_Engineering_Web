@@ -48,7 +48,7 @@
 <section id="hero">
   <div class="container">
     <h1>La Méthodologie Professionnelle (2026)</h1>
-    <p class="lede">Le prompt engineering est la compétence clé pour exploiter l'IA en Direction Financière. Guide complet des techniques, de la structure de base aux méthodes avancées.</p>
+    <p class="lede">Le prompt engineering est la compétence clé pour exploiter l'IA en comptabilité. Guide complet des techniques, de la structure de base aux méthodes avancées.</p>
   </div>
 </section>
 
@@ -59,117 +59,113 @@
     <h3>TL;DR — Les points clés à retenir</h3>
     <ul class="tldr-list">
       <li><strong>Un prompt professionnel contient 6 éléments :</strong> Rôle, contexte, tâche, format, contraintes, exemples. Plus vous en incluez, plus la réponse est exploitable en comptabilité.</li>
-      <li><strong>Des techniques avancées pour l'analyse :</strong> Les méthodes "Chain-of-Thought" ou "Structured Output" améliorent drastiquement la fiabilité sur les calculs d'écarts ou l'audit.</li>
+      <li><strong>Des techniques avancées pour l'analyse :</strong> Les méthodes "Chain-of-Thought" ou "Structured Output" améliorent drastiquement la fiabilité sur les schémas d'écritures ou le rapprochement bancaire.</li>
       <li><strong>Compétence agnostique :</strong> Les principes appris ici sont transférables entre ChatGPT, Claude, Copilot ou Gemini.</li>
-      <li><strong>0 ligne de code requise :</strong> Le prompt engineering est une compétence de communication structurée et de logique financière, pas de programmation.</li>
+      <li><strong>0 ligne de code requise :</strong> Le prompt engineering est une compétence de communication structurée et de logique comptable, pas de programmation.</li>
       <li><strong>Vérification humaine stricte :</strong> Ne jamais copier-coller un output IA financier sans vérifier les chiffres (risque d'hallucination).</li>
     </ul>
   </div>
 
   <div class="content-section">
-    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">Le gain de productivité lié à l'IA n'est plus une théorie. Selon une étude de référence (Noy & Zhang, Science 2023), les professionnels maîtrisant l'art du prompt observent <strong>une réduction de 40% de leur temps de rédaction/synthèse et une hausse de 18% de la qualité</strong>. Voici comment appliquer cette science à la comptabilité.</p>
+    <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">Le gain de productivité lié à l'IA n'est plus une théorie. Selon une étude de référence (Noy & Zhang, Science 2023), les professionnels maîtrisant l'art du prompt observent <strong>une réduction de 40% de leur temps de rédaction/synthèse et une hausse de 18% de la qualité</strong>. Voici comment appliquer cette science au quotidien d'un service comptable.</p>
   </div>
 
   <!-- LES 6 BRIQUES -->
   <div class="content-section">
     <h2>Les 6 éléments d'un prompt professionnel efficace</h2>
-    <p style="margin-bottom: 2rem; color: var(--text-muted);">Un prompt parfait se structure autour de 6 piliers. Vous n'êtes pas obligé de tous les utiliser à chaque fois, mais leur combinaison garantit un livrable prêt à l'emploi.</p>
+    <p style="margin-bottom: 2rem; color: var(--text-muted);">Un prompt parfait se structure autour de 6 piliers. Vous n'êtes pas obligé de tous les utiliser à chaque fois, mais leur combinaison garantit un livrable prêt à l'emploi (sans avoir à corriger l'IA).</p>
     
     <div class="grid">
       <div class="card">
         <h3 style="color: var(--accent);">1. Rôle (Persona)</h3>
         <p>Définissez qui est l'IA. Cela conditionne son niveau de technicité comptable et son vocabulaire.</p>
-        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Tu es un Réviseur Comptable senior spécialisé en fiscalité d'entreprise."</div></div>
+        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Tu es un Chef Comptable expert du Plan Comptable Général (PCG) et de la fiscalité locale."</div></div>
       </div>
 
       <div class="card">
         <h3 style="color: var(--accent);">2. Contexte</h3>
-        <p>Pourquoi faites-vous cette tâche ? À qui s'adresse le livrable final (DAF, Comex, Auditeurs) ?</p>
-        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Mon entreprise clôture ses comptes annuels. Le CAC nous demande de justifier la provision pour risques."</div></div>
+        <p>Pourquoi faites-vous cette tâche ? À qui s'adresse le livrable final (DAF, Commerciaux, Fournisseurs) ?</p>
+        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Nous sommes en période de clôture mensuelle et je dois justifier l'apurement du compte d'attente 471."</div></div>
       </div>
 
       <div class="card">
         <h3 style="color: var(--accent);">3. Tâche</h3>
-        <p>L'action précise formulée avec un verbe d'action direct (analyse, résume, calcule, compare).</p>
-        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Rédige la note annexe détaillant le mode de calcul de cette provision."</div></div>
+        <p>L'action précise formulée avec un verbe d'action direct (analyse, résume, calcule, lettrer).</p>
+        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Rédige un e-mail à destination de l'équipe commerciale pour réclamer les factures manquantes bloquant la clôture."</div></div>
       </div>
 
       <div class="card">
         <h3 style="color: var(--accent);">4. Format de sortie</h3>
-        <p>Spécifiez comment vous voulez la réponse pour éviter le bla-bla inutile (Tableau, Markdown, JSON).</p>
-        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Format : Rapport avec 3 titres H2 et un tableau de synthèse chiffré à la fin."</div></div>
+        <p>Spécifiez comment vous voulez la réponse pour éviter le bla-bla inutile et copier-coller directement.</p>
+        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Format : E-mail professionnel structuré avec une liste à puces mettant en évidence les montants en gras."</div></div>
       </div>
 
       <div class="card">
         <h3 style="color: var(--accent);">5. Contraintes</h3>
         <p>Ce que l'IA ne doit <strong>absolument pas</strong> faire.</p>
-        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Ne mentionne pas le nom de nos clients. Évite les formules de politesse introductives."</div></div>
+        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Contrainte : N'invente aucun numéro de facture. Ne dépasse pas 150 mots. Ton ferme mais poli."</div></div>
       </div>
 
       <div class="card">
         <h3 style="color: var(--accent);">6. Exemples (Few-Shot)</h3>
         <p>Montrez à l'IA ce que vous attendez en lui donnant un modèle de réponse réussi.</p>
-        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Voici le style attendu : [Collez un ancien commentaire budgétaire parfait]."</div></div>
+        <div class="prompt-container" style="margin-top: 1rem;"><div class="prompt-body" style="padding: 1rem; font-size: 0.85rem;">"Voici le modèle de relance interne que nous utilisons habituellement : [Collez l'ancien e-mail]."</div></div>
       </div>
     </div>
   </div>
 
   <!-- TECHNIQUES AVANCÉES -->
   <div class="content-section">
-    <h2>Techniques cognitives avancées</h2>
+    <h2>Techniques cognitives avancées en Comptabilité</h2>
     
     <div class="card" style="margin-bottom: 2rem;">
       <h3>1. Chain-of-Thought (Raisonnement étape par étape)</h3>
-      <p>Essentiel en finance pour créer une <strong>piste d'audit</strong>. Au lieu de demander directement la réponse, forcez l'IA à expliquer son calcul. Cela réduit les erreurs logiques de 80%.</p>
+      <p>Essentiel en comptabilité pour créer une <strong>piste d'audit</strong> fiable. Au lieu de demander directement la réponse, forcez l'IA à expliquer son calcul ou son choix de compte. Cela réduit les erreurs d'imputation de 80%.</p>
       <div class="prompt-container">
-        <div class="prompt-body">"Avant de me donner le résultat de la variation du BFR, explique-moi ton raisonnement mathématique poste par poste, et déduis-en l'impact sur la trésorerie."</div>
+        <div class="prompt-body">"Avant de me donner le schéma d'écriture comptable pour cette facture complexe d'immobilisation, détaille ton raisonnement sur le calcul de la TVA déductible et la base amortissable."</div>
       </div>
     </div>
 
     <div class="card" style="margin-bottom: 2rem;">
       <h3>2. Tree-of-Thought (Exploration d'hypothèses)</h3>
-      <p>Idéal pour le Contrôle de Gestion ou la stratégie. Demandez à l'IA d'envisager plusieurs scénarios financiers avant de trancher.</p>
+      <p>Idéal face à un cas de figure atypique (litiges, abandons de créances, notes de frais spéciales). Demandez à l'IA d'envisager plusieurs traitements comptables avant de trancher.</p>
       <div class="prompt-container">
-        <div class="prompt-body">"Propose 3 scénarios d'optimisation de nos charges d'exploitation (OPEX). Pour chacun, liste les risques financiers et sociaux. Ensuite seulement, recommande la meilleure approche pour notre PME."</div>
+        <div class="prompt-body">"Propose 3 manières comptables de traiter ce litige client avec une créance douteuse de 10 000€. Pour chaque approche, indique l'impact sur le compte de résultat. Recommande ensuite la méthode la plus prudente."</div>
       </div>
     </div>
 
     <div class="card" style="margin-bottom: 2rem;">
       <h3>3. Iterative Refinement (Affinage continu)</h3>
-      <p>Le premier output est toujours un brouillon. Ne recommencez pas à zéro : conversez avec le modèle pour sculpter la réponse.</p>
+      <p>Le premier output est toujours un brouillon. Ne recommencez pas le prompt à zéro : conversez avec l'IA comme avec un collaborateur pour affiner la réponse.</p>
       <div class="prompt-container">
-        <div class="prompt-body">"Ta synthèse est bonne, mais le ton est trop familier pour le Conseil d'Administration. Rends-le plus institutionnel, et retire le 2ème paragraphe qui est hors sujet."</div>
+        <div class="prompt-body">"Ton brouillon d'e-mail pour justifier l'écart de TVA au DAF est bon, mais le ton est trop familier. Rends-le plus professionnel et ajoute les numéros des comptes PCG (Classe 4) que tu as mentionnés."</div>
       </div>
     </div>
   </div>
 
   <!-- PROMPTS PAR METIER -->
   <div class="content-section">
-    <h2>La structure parfaite appliquée à vos métiers</h2>
+    <h2>La structure parfaite appliquée à la Comptabilité</h2>
     
     <div class="grid">
       <div class="card">
-        <h3 style="color: var(--primary);">Contrôleur de Gestion</h3>
+        <h3 style="color: var(--primary);">Le Chef Comptable</h3>
         <div class="prompt-container">
-          <div class="prompt-body" style="font-size: 0.85rem;">Tu es un Contrôleur de Gestion senior.
-Analyse les écarts budgétaires de ce fichier [Coller données].
-Structure ta réponse :
-- 1. Synthèse globale (2 phrases)
-- 2. Top 3 des écarts défavorables avec pourcentage
-- 3. Recommandations d'actions correctives.
-Ton : Analytique, neutre et basé uniquement sur les chiffres fournis.
-Contrainte : Ne génère pas d'introduction cordiale.</div>
+          <div class="prompt-body" style="font-size: 0.85rem;">Tu es un Chef Comptable très rigoureux.
+Contexte : Nous changeons notre politique de gestion des notes de frais.
+Tâche : Rédige une note de service stricte pour tous les employés expliquant les nouvelles règles de récupération de la TVA sur les frais de restauration et de déplacement.
+Format : Note formelle en 3 paragraphes avec une liste des justificatifs obligatoires.
+Contrainte : Vulgarise le vocabulaire fiscal pour que les non-comptables comprennent bien.</div>
         </div>
       </div>
 
       <div class="card">
-        <h3 style="color: var(--primary);">Auditeur / Réviseur</h3>
+        <h3 style="color: var(--primary);">Le Comptable Fournisseur / Trésorerie</h3>
         <div class="prompt-container">
-          <div class="prompt-body" style="font-size: 0.85rem;">Tu es un Auditeur Financier.
-Examine cet extrait de balance âgée fournisseurs [Coller données].
-Tâche : Identifie les anomalies potentielles.
-Format : Tableau avec les colonnes : Fournisseur | Montant | Jours de retard | Niveau de risque (Faible/Moyen/Élevé).
-Biais à éviter : Ne juge pas la solvabilité de l'entreprise, contente-toi d'analyser le risque de lettrage.</div>
+          <div class="prompt-body" style="font-size: 0.85rem;">Tu es Comptable Trésorerie.
+Tâche : Analyse cet extrait de rapprochement bancaire [Coller les 10 lignes du fichier Excel].
+Format : Génère un tableau avec les colonnes : Date | Libellé Opération | Montant | Compte comptable proposé pour l'imputation | Justification.
+Contrainte : Pour les frais bancaires, utilise impérativement le compte 627. Ne propose aucune imputation si le libellé bancaire est vide ou illisible.</div>
         </div>
       </div>
     </div>
@@ -180,11 +176,11 @@ Biais à éviter : Ne juge pas la solvabilité de l'entreprise, contente-toi d'a
     <h2>Les 5 erreurs fatales en entreprise</h2>
     <div class="card" style="background: #FEF2F2; border-color: #FCA5A5;">
       <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 1rem;"><strong>1. Le prompt trop court :</strong> "Fais une analyse de mon CA" générera une réponse scolaire et inutile.</li>
-        <li style="margin-bottom: 1rem;"><strong>2. Instructions contradictoires :</strong> Demander une note "très détaillée mais en 3 lignes" perturbe l'algorithme. Choisissez une priorité.</li>
-        <li style="margin-bottom: 1rem;"><strong>3. Oublier de spécifier la langue :</strong> Sur des sujets très techniques (normes IFRS), l'IA bascule souvent en anglais. Ajoutez "Réponds en français".</li>
-        <li style="margin-bottom: 1rem;"><strong>4. Traiter l'IA comme Google :</strong> Si la réponse est mauvaise, ne tapez pas un nouveau prompt depuis zéro. Dites-lui : "Ce n'est pas ce que j'ai demandé, corrige tel point."</li>
-        <li style="margin-bottom: 0;"><strong>5. La confiance aveugle :</strong> C'est la règle d'or en finance. Les LLM peuvent halluciner des normes ou inverser des signes (+/-). <strong>La vérification factuelle humaine est obligatoire.</strong></li>
+        <li style="margin-bottom: 1rem;"><strong>1. Le prompt trop court :</strong> "Passe une écriture de paie" générera un schéma théorique inutilisable sans vos propres données (brut, cotisations patronales, etc.).</li>
+        <li style="margin-bottom: 1rem;"><strong>2. Instructions contradictoires :</strong> Demander une note d'analyse "très détaillée mais en 3 lignes" perturbe l'algorithme. Choisissez une priorité (synthèse ou exhaustivité).</li>
+        <li style="margin-bottom: 1rem;"><strong>3. Ne pas spécifier le référentiel :</strong> Sur des sujets très techniques, l'IA peut basculer sur les normes comptables américaines (US GAAP) par défaut. Ajoutez toujours "Selon le référentiel comptable local / PCG / SYSCOHADA".</li>
+        <li style="margin-bottom: 1rem;"><strong>4. Traiter l'IA comme Google :</strong> Si la réponse est mauvaise, ne retapez pas un nouveau prompt depuis zéro. Corrigez-la dans la conversation : "Ce n'est pas ce que j'ai demandé, corrige tel point."</li>
+        <li style="margin-bottom: 0;"><strong>5. La confiance aveugle :</strong> C'est la règle d'or en comptabilité. Les IA peuvent halluciner des taux de TVA ou inverser des signes (+/-). <strong>La vérification factuelle humaine est toujours obligatoire.</strong></li>
       </ul>
     </div>
   </div>
@@ -192,7 +188,7 @@ Biais à éviter : Ne juge pas la solvabilité de l'entreprise, contente-toi d'a
 </main>
 
 <footer>
-  <p style="color: var(--text-muted); text-align: center; font-size: 0.9rem; padding: 2rem;">D'après les méthodologies appliquées de l'industrie IA (2026) • Adapté pour la Finance par TIAO Eliasse.</p>
+  <p style="color: var(--text-muted); text-align: center; font-size: 0.9rem; padding: 2rem;">D'après les méthodologies appliquées de l'industrie IA (2026) • Adapté pour la Comptabilité par TIAO Eliasse.</p>
 </footer>
 
 </body>
