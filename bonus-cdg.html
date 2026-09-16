@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrôle de Gestion — Prompt Finance</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .brand svg { width: 26px; height: 26px; margin-right: 10px; stroke: var(--primary); flex-shrink: 0; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="1" y1="9" x2="25" y2="9" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="1" y1="17" x2="25" y2="17" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="9" y1="1" x2="9" y2="25" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      Le Grand Livre des Prompts
+    </a>
+    <nav class="links">
+      <a href="fondamentaux.html">Fondamentaux</a>
+      <a href="comparateur.html">Cas Généraux</a>
+      <a href="assurance.html">Spécial Assurance</a>
+      <a href="techniques.html">Techniques</a>
+      <a href="bonus-cdg.html" class="active">Bonus CDG</a>
+      <a href="ressources.html">Ressources</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="container">
+    <h1>L'IA pour le Contrôle de Gestion</h1>
+    <p class="lede">Automatisez l'analyse de vos tableaux de bord et la rédaction de vos commentaires budgétaires pour le Comex.</p>
+  </div>
+</section>
+
+<main class="container">
+  <div class="card" style="margin-bottom: 3rem;">
+    <h2>Cas : Analyse des écarts OPEX</h2>
+    <p>Objectif : Transformer des données brutes en une synthèse décisionnelle prête à être envoyée à la direction.</p>
+    
+    <div class="prompt-container" style="margin-top: 2rem;">
+      <div class="prompt-header">
+        <span>LE PROMPT PARFAIT (À COPIER)</span>
+        <button class="copy-btn" onclick="copyPrompt(this)">Copier</button>
+      </div>
+      <div class="prompt-body">Agis comme un contrôleur de gestion senior.
+Contexte : Je dois rédiger la note de synthèse du reporting mensuel pour le Comex. 
+Tâche : Analyse les écarts budgétaires des charges opérationnelles (Opex) ci-dessous. 
+Format : Rédige 3 bullet points synthétiques mettant en évidence les plus gros écarts, suivis d'une recommandation.
+Contrainte : Utilise un ton formel et orienté business. Ne détaille pas les écarts de moins de 5%.
+
+Voici les données du mois (Réel vs Budget) :
+- Frais de personnel : 120k€ (Budget 118k€)
+- Frais Marketing : 45k€ (Budget 30k€) - Dû au lancement anticipé de la campagne.
+- Frais IT & Serveurs : 12k€ (Budget 18k€) - Suite à la renégociation Cloud.
+- Déplacements : 5k€ (Budget 5k€)</div>
+    </div>
+  </div>
+
+  <div class="author-section" style="border-left-color: var(--primary); background: #F1F5F9;">
+    <h2>Check-list Sécurité & Qualité</h2>
+    <p><strong>1. Anonymisation :</strong> Ai-je supprimé les noms des salariés et les données bancaires ?</p>
+    <p><strong>2. Cadrage :</strong> L'IA sait-elle exactement sous quel format je veux la réponse (Tableau, puces, e-mail) ?</p>
+    <p><strong>3. Piste d'audit :</strong> Ai-je re-contrôlé les écarts mathématiques calculés par l'algorithme ?</p>
+  </div>
+</main>
+
+<script>
+  function copyPrompt(button) {
+    const promptBox = button.parentElement.nextElementSibling;
+    navigator.clipboard.writeText(promptBox.innerText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = "Copié !";
+        setTimeout(() => button.innerText = originalText, 2000);
+    });
+  }
+</script>
+</body>
+</html>
